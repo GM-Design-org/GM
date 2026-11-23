@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>GM Design</title>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js"></script>
@@ -56,29 +56,53 @@ canvas#gCv{max-width:100%;border:1px solid var(--b);border-radius:10px;cursor:cr
 .seg{display:flex;background:var(--pl);border-radius:12px;padding:4px;gap:4px}
 .seg button{flex:1;border:0;background:none;padding:10px;border-radius:9px;font:700 14px Tajawal,sans-serif;color:var(--p);cursor:pointer;transition:background .15s,box-shadow .15s}
 .seg button.on{background:#fff;box-shadow:0 2px 8px rgba(23,74,139,.15)}
-.iv{--ac:#174A8B;--acl:rgba(23,74,139,.10);max-width:480px;margin:0 auto;padding:14px 14px 30px}
-.hero{position:relative;border-radius:26px;overflow:hidden;box-shadow:0 20px 44px rgba(15,53,104,.22);animation:up .6s ease both}
-.hero img{display:block;width:100%;height:auto;max-height:64vh;object-fit:cover}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.28));pointer-events:none}
-.hero.blank{height:190px;background:linear-gradient(135deg,var(--ac),#0F3568)}
-.hero.blank:before{content:"";position:absolute;width:230px;height:230px;border-radius:50%;background:rgba(255,255,255,.10);top:-80px;left:-60px}
-.hero.blank:after{background:radial-gradient(circle at 80% 90%,rgba(255,255,255,.2),transparent 55%)}
-.tcard{position:relative;margin:-38px 14px 0;background:#fff;border-radius:22px;padding:22px 18px;text-align:center;box-shadow:0 14px 34px rgba(15,53,104,.14);animation:up .6s .1s ease both}
-.pill{display:inline-block;padding:4px 14px;border-radius:99px;background:var(--acl);color:var(--ac);font-weight:700;font-size:12.5px;margin-bottom:10px}
-.tcard h1{font-size:25px;margin:0 0 6px;color:#172033}
-.greet{color:var(--m);margin:0}.greet b{display:block;color:var(--ac);font-size:20px;margin-top:2px}
+.ivp{--ac:#174A8B;--acl:rgba(23,74,139,.12);min-height:100vh;background:radial-gradient(900px 420px at 50% -80px,var(--acl),transparent 70%),linear-gradient(180deg,#F4F8FE,#fff 45%,#F4F8FE)}
+.iv{max-width:480px;margin:0 auto;padding:18px 16px 38px}
+.frame{background:#fff;border-radius:26px;padding:8px;box-shadow:0 24px 50px rgba(15,53,104,.18),0 2px 6px rgba(15,53,104,.06);animation:up .7s ease both}
+.frame img{display:block;width:100%;height:auto;object-fit:contain;border-radius:19px}
+.hero.blank{position:relative;overflow:hidden;height:210px;border-radius:26px;background:linear-gradient(135deg,var(--ac),#0F3568);box-shadow:0 24px 50px rgba(15,53,104,.2);animation:up .7s ease both}
+.hero.blank:before{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.10);top:-90px;left:-60px}
+.hero.blank:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 82% 92%,rgba(255,255,255,.22),transparent 55%)}
+.tcard{position:relative;margin-top:16px;background:linear-gradient(180deg,#fff,#F8FBFF);border:1px solid #E8EFF9;border-radius:26px;padding:26px 20px 24px;text-align:center;box-shadow:0 18px 40px rgba(15,53,104,.12);animation:up .7s .1s ease both}
+.tcard:before{content:"";position:absolute;inset:7px;border:1px solid var(--acl);border-radius:20px;pointer-events:none}
+.noimg .tcard{margin-top:-44px}
+.pill{display:inline-block;padding:5px 16px;border-radius:99px;background:var(--acl);color:var(--ac);font-weight:700;font-size:12.5px;letter-spacing:.5px;margin-bottom:12px}
+.tcard h1{font:700 30px/1.4 Amiri,Tajawal,serif;color:#172033;margin:0}
+.orn{display:flex;align-items:center;gap:10px;color:var(--ac);max-width:200px;margin:12px auto}.orn i{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--ac))}.orn i:last-child{background:linear-gradient(270deg,transparent,var(--ac))}
+.greet{color:var(--m);margin:0;font-size:15px}.greet b{display:block;font:700 23px Amiri,Tajawal,serif;color:var(--ac);margin-top:4px}
 .dgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
-.dc{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #E6EDF7;border-radius:18px;padding:14px;box-shadow:0 8px 22px rgba(15,53,104,.07);animation:up .6s ease both}
+.dc{display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center;background:linear-gradient(145deg,#fff,#F4F8FF);border:1px solid #E6EDF7;border-radius:20px;padding:16px 12px;box-shadow:0 10px 26px rgba(15,53,104,.08);animation:up .7s ease both}
 .dc:nth-child(2){animation-delay:.08s}.dc:nth-child(3){animation-delay:.16s}.dc:nth-child(4){animation-delay:.24s}.dc.wide{grid-column:1/-1}
-.dci{width:44px;height:44px;border-radius:14px;background:var(--acl);color:var(--ac);display:grid;place-items:center;flex-shrink:0}
-.dct{display:flex;flex-direction:column;min-width:0}.dct small{font-size:12px}.dct b{font-size:15.5px;color:#172033;line-height:1.4}.dct span{font-size:12.5px;color:var(--m)}
-.c2{background:#fff;border:1px solid #E6EDF7;border-radius:22px;padding:20px 18px;margin-top:14px;text-align:center;box-shadow:0 10px 26px rgba(15,53,104,.08);animation:up .6s ease both}
-.ivb{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px 18px;border-radius:14px;border:0;background:var(--ac);color:#fff;font:700 16px Tajawal,sans-serif;cursor:pointer;text-decoration:none;box-shadow:0 8px 20px rgba(15,53,104,.18);transition:transform .15s,filter .15s}
+.dci{width:46px;height:46px;border-radius:50%;background:var(--acl);color:var(--ac);display:grid;place-items:center;margin-bottom:2px}
+.dc small{font-size:12px;letter-spacing:.4px}.dc b{font-size:16px;color:#172033;line-height:1.5}.dc span{font-size:12.5px;color:var(--m)}
+.c2{background:#fff;border:1px solid #E6EDF7;border-radius:22px;padding:18px;margin-top:14px;box-shadow:0 10px 26px rgba(15,53,104,.08);animation:up .7s ease both}
+.ivb{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:15px 18px;border-radius:16px;border:0;background:linear-gradient(135deg,var(--ac),#0F3568);color:#fff;font:700 16px Tajawal,sans-serif;cursor:pointer;text-decoration:none;box-shadow:0 10px 22px rgba(15,53,104,.22);transition:transform .15s,filter .15s}
 .ivb:hover{filter:brightness(1.08)}.ivb:active{transform:scale(.98)}.ivb.ghost{background:#fff;color:var(--ac);border:1.5px solid var(--acl);box-shadow:none}
-.stk{display:flex;flex-direction:column;gap:10px}
+.rsvp{display:flex;flex-direction:column;gap:10px;margin-top:18px;animation:up .7s .1s ease both}
 .note{margin-top:14px;padding:14px;border-radius:16px;text-align:center;font-weight:700;display:flex;gap:8px;justify-content:center;align-items:center}.note.ok{background:#DDF3EA;color:var(--ok)}.note.no{background:#FBE4E7;color:var(--no)}
-.qbox{display:flex;justify-content:center;padding:14px;background:#fff;border-radius:18px;border:1px dashed var(--acl);margin:12px auto;width:fit-content}
+.tk2{background:#fff;border:1px solid #E8EFF9;border-radius:24px;margin-top:18px;padding:22px 18px;text-align:center;box-shadow:0 18px 40px rgba(15,53,104,.12);animation:up .7s ease both}
+.tkn{font:700 24px Amiri,Tajawal,serif;color:#172033;margin:4px 0}
+.sep{position:relative;border-top:2px dashed #DCE6F2;margin:16px -18px}.sep:before,.sep:after{content:"";position:absolute;top:-12px;width:22px;height:22px;border-radius:50%;background:#F4F8FE;border:1px solid #E8EFF9}.sep:before{right:-11px}.sep:after{left:-11px}
+.qbox{display:flex;justify-content:center;padding:14px;background:#fff;border-radius:18px;border:1px dashed var(--acl);margin:6px auto 12px;width:fit-content}
+.qrbox{margin:0 auto 14px;border:2px dashed var(--p);border-radius:10px;background:var(--pl);max-width:100%}
+input[type=range].rg{padding:0;border:0;background:none;height:30px;accent-color:var(--p)}input[type=range].rg:focus{box-shadow:none}
 @keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+canvas#gCv{touch-action:none;max-width:100%;border:1px solid var(--b);border-radius:10px;cursor:crosshair}
+.tsel{position:absolute;top:10px;right:10px;z-index:2;background:#fff;border-radius:8px;padding:3px 5px;box-shadow:0 2px 8px rgba(15,53,104,.2);line-height:0}
+.rc{border-radius:24px;padding:30px 20px;text-align:center;box-shadow:0 18px 40px rgba(15,53,104,.14);animation:up .5s ease both}
+.rc .ric{width:76px;height:76px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;background:rgba(255,255,255,.75)}
+.rc .rt{font:700 26px/1.5 Amiri,Tajawal,serif}.rc .rn{font:700 30px/1.4 Amiri,Tajawal,serif;margin:6px 0}
+.rc .rm{display:flex;gap:6px;justify-content:center;align-items:center;font-size:14px;margin-top:10px;opacity:.9}.rc .rs{font-weight:700;margin-top:12px}.rc .rev{margin-top:14px;padding-top:12px;border-top:1px dashed rgba(0,0,0,.18);font-weight:700}
+.chip{display:inline-flex;gap:6px;align-items:center;background:rgba(255,255,255,.7);border-radius:99px;padding:6px 14px;font-weight:700;font-size:14px}
+.rc.ok{background:linear-gradient(160deg,#DDF3EA,#C4EBD8);color:#0E6244}.rc.ok .ric{color:var(--ok)}
+.rc.warn{background:linear-gradient(160deg,#FCEFD8,#F8DFB4);color:#8A5208}.rc.warn .ric{color:var(--w)}
+.rc.bad{background:linear-gradient(160deg,#FBE4E7,#F6CCD2);color:#9A2230}.rc.bad .ric{color:var(--no)}
+.tk2.big{padding:26px 18px}.tkh{font:700 22px Amiri,Tajawal,serif;color:var(--ac);margin-top:2px}
+.qbox.lg{padding:20px;border-radius:22px;box-shadow:0 10px 26px rgba(15,53,104,.1);border-style:solid;border-color:var(--acl)}
+.keep{text-align:center;font-weight:700;color:var(--ac);margin:16px 6px 0;line-height:1.8}
+.info{background:#fff;border:1px solid #E6EDF7;border-radius:20px;padding:16px 16px 14px;margin-top:18px;box-shadow:0 10px 26px rgba(15,53,104,.07);animation:up .7s ease both}
+.info h2{font:700 21px Amiri,Tajawal,serif;margin:0 0 10px;text-align:center;color:#172033}
+.irow{display:flex;flex-direction:column;gap:8px}.ir{display:flex;gap:10px;align-items:center;font-size:14.5px}.iri{width:34px;height:34px;border-radius:50%;background:var(--acl);color:var(--ac);display:grid;place-items:center;flex-shrink:0}
 </style>
 </head>
 <body>
@@ -96,7 +120,7 @@ const sb=supabase.createClient(CFG.URL,CFG.KEY);
 /* ===== أدوات ===== */
 const $=(s,r)=>(r||document).querySelector(s);
 const esc=v=>v==null?'':String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const IC={barcode:'<path d="M4 5v14M8 5v14M12 5v14M16 5v14M20 5v14"/>',mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',home:'<path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/>',set:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>',scan:'<path d="M4 8V5h3M17 4h3v3M20 16v3h-3M7 20H4v-3M4 12h16"/>',out:'<path d="M10 4H5v16h5M15 8l4 4-4 4M19 12H9"/>',plus:'<path d="M12 5v14M5 12h14"/>',back:'<path d="M9 6l6 6-6 6"/>',pin:'<path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>',map:'<path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/>',check:'<path d="m5 12 5 5 9-10"/>',cal:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',users:'<circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-3.5 3-5.5 7-5.5s7 2 7 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 15c2.5.6 4 2.2 4 5"/>'};
+const IC={barcode:'<path d="M4 5v14M8 5v14M12 5v14M16 5v14M20 5v14"/>',mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',home:'<path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/>',set:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>',scan:'<path d="M4 8V5h3M17 4h3v3M20 16v3h-3M7 20H4v-3M4 12h16"/>',out:'<path d="M10 4H5v16h5M15 8l4 4-4 4M19 12H9"/>',plus:'<path d="M12 5v14M5 12h14"/>',back:'<path d="M9 6l6 6-6 6"/>',pin:'<path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>',map:'<path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/>',check:'<path d="m5 12 5 5 9-10"/>',x:'<path d="M6 6l12 12M18 6 6 18"/>',alert:'<path d="M12 3 2 20h20z"/><path d="M12 10v5M12 18v.5"/>',folder:'<path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>',cal:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',users:'<circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-3.5 3-5.5 7-5.5s7 2 7 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 15c2.5.6 4 2.2 4 5"/>'};
 const ic=(n,z)=>`<svg width="${z||20}" height="${z||20}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${IC[n]||''}</svg>`;
 /* رابط عام مركزي: يحافظ على مسار GitHub Pages */
 const link=(k,v)=>location.origin+location.pathname+'?'+k+'='+encodeURIComponent(v);
@@ -157,68 +181,129 @@ function vHome(){mount(shell(`<div class="m" style="margin-bottom:6px">مرحب�
 <div class="card row bt"><div><b>رابط الماسح العام</b><p class="m" style="margin:0">يعمل بدون تسجيل دخول، شاركيه مع موظفي الاستقبال</p></div><div class="row"><a class="btn bo bs" href="#/scanner-public">فتح</a><button class="btn bp bs" onclick="copy(location.origin+location.pathname+'#/scanner-public')">نسخ الرابط</button></div></div>`,'home'))}
 
 /* ===== قسم الباركودات ===== */
-const G={img:null,x:0,y:0};
+const G={img:null,x:0,y:0,placed:false,gx:false,gy:false};
+let F={};
+const FONT='"Tajawal",sans-serif';
 async function vBarcodes(){mount(shell(LD,'barcodes'));
- const[{data:fo},{data:tk}]=await Promise.all([sb.from('barcode_folders').select('*').order('created_at'),sb.from('generic_tickets').select('folder_id,qr_status')]);
+ const[{data:fo},{data:tk}]=await Promise.all([sb.from('barcode_folders').select('*').order('created_at'),sb.from('generic_tickets').select('folder_id')]);
  const cnt=id=>(tk||[]).filter(t=>t.folder_id===id).length;
- const opts=(fo||[]).map(f=>`<option value="${f.id}">${esc(f.name)}</option>`).join('');
- mount(shell(`<h1>توليد الباركودات</h1>
-<div class="card"><h3>المجلدات</h3>${can('barcodes')?`<form id="ff" class="row"><input id="fn" class="x1" placeholder="اسم مجلد جديد (مثال: زواج نورة)" required><button class="btn bp">${ic('plus',17)} إضافة</button></form>`:''}
-<div class="row" style="margin-top:12px">${(fo||[]).map(f=>`<a class="btn bo" href="#/folder/${f.id}">${esc(f.name)} <span class="bg">${cnt(f.id)}</span></a>`).join('')||'<span class="m">لا توجد مجلدات</span>'}</div></div>
-${can('barcodes')&&fo&&fo.length?`<div class="card"><h3>توليد تذاكر</h3>
-<div class="row">${fld('المجلد',`<select id="gF">${opts}</select>`).replace('class="f"','class="f x1"')}${fld('نوع التوليد','<select id="gM"><option value="merged">دعوة مدموجة بالتصميم</option><option value="qr">باركود مفرغ فقط</option></select>').replace('class="f"','class="f x1"')}</div>
-<div id="gD">${fileField('gFile','تصميم الدعوة (PNG/JPG)','بعد الاختيار اضغطي على الصورة لتحديد مكان الباركود')}<canvas id="gCv" hidden></canvas></div>
-<div class="row">${fld('لون الباركود','<input id="gCo" type="color" value="#174A8B">')}${fld('مقاس الباركود','<input id="gS" type="number" value="250" min="50" max="1000">').replace('class="f"','class="f x1"')}</div>
-${fld('قائمة الأسماء (اختياري)','<textarea id="gN" placeholder="اسم في كل سطر"></textarea>','عند إدخال أسماء يُحسب العدد منها تلقائيًا')}
-<div class="row">${fld('العدد','<input id="gC" type="number" value="5" min="1" max="500">').replace('class="f"','class="f x1"')}${fld('المرافقين','<input id="gP" type="number" value="0" min="0">').replace('class="f"','class="f x1"')}${fld('الصيغة','<select id="gT"><option value="companions">عدد المرافقين / X</option><option value="includes">الدعوة تشمل (X) أشخاص</option></select>').replace('class="f"','class="f x1"')}</div>
-<button id="gGo" class="btn bp bk">بدء التوليد والحفظ</button></div>`:''}`,'barcodes'));
- const ff=$('#ff');if(ff)ff.onsubmit=async e=>{e.preventDefault();const{error}=await sb.from('barcode_folders').insert({name:$('#fn').value.trim()});if(error)return dbErr(error,'تعذر إنشاء المجلد');toast('تم إنشاء المجلد','ok');vBarcodes()};
- if(!$('#gGo'))return;
- const draw=()=>{const cv=$('#gCv');if(!G.img){cv.hidden=true;return}cv.hidden=false;cv.width=G.img.width;cv.height=G.img.height;const x=cv.getContext('2d');x.drawImage(G.img,0,0);const z=+$('#gS').value||250;x.strokeStyle=$('#gCo').value;x.lineWidth=Math.max(3,cv.width/200);x.setLineDash([12,8]);x.strokeRect(G.x-z/2,G.y-z/2,z,z)};
- $('#gFile').onchange=e=>{const f=e.target.files[0];if(!f)return;const im=new Image();im.onload=()=>{const k=Math.min(1,1080/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);G.img=c;G.x=c.width/2;G.y=c.height/2;draw()};im.src=URL.createObjectURL(f)};
- $('#gCv').onclick=e=>{const cv=e.target,r=cv.getBoundingClientRect();G.x=(e.clientX-r.left)*cv.width/r.width;G.y=(e.clientY-r.top)*cv.height/r.height;draw()};
- $('#gS').oninput=draw;$('#gCo').oninput=draw;$('#gM').onchange=e=>{$('#gD').hidden=e.target.value==='qr'};
- $('#gGo').onclick=genTickets}
-function makeTicket(t,o){const qs=o.size,d=document.createElement('div');
- new QRCode(d,{text:link('scan',t.qr_token),width:400,height:400,colorDark:o.color,colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.M});
- const q=d.querySelector('canvas'),c=document.createElement('canvas'),x=c.getContext('2d');let qx,qy;
+ mount(shell(`<div class="row bt"><h1>الباركودات</h1>${can('barcodes')?`<button class="btn bp" onclick="folderModal()">${ic('plus',17)} إنشاء مجلد جديد</button>`:''}</div>
+<div class="g2">${(fo||[]).map(f=>`<a class="card big" href="#/folder/${f.id}"><div class="ico">${ic('folder',28)}</div><h3 style="margin:0">${esc(f.name)}</h3>${f.event_title?`<small>${esc(f.event_title)}</small>`:''}<span class="m">${toAr(cnt(f.id))} باركود</span></a>`).join('')||'<div class="em">لا توجد مجلدات. أنشئي مجلدًا جديدًا للبدء</div>'}</div>`,'barcodes'))}
+function folderModal(){modal(`<h2>إنشاء مجلد جديد</h2><form id="ff">${fld('اسم المجلد (يظهر في لوحة التحكم فقط)','<input id="fn" required maxlength="150" placeholder="مثال: حفلات شهر ديسمبر">')}${fld('اسم المناسبة (اختياري، يظهر عند فحص التذكرة)','<input id="fe" maxlength="150" placeholder="مثال: حفل زواج نورة ومحمد">')}<div class="row"><button type="button" class="btn bo x1" onclick="closeM()">إلغاء</button><button id="fb" class="btn bp x1">إنشاء</button></div></form>`);
+ $('#ff').onsubmit=async e=>{e.preventDefault();const b=$('#fb'),et=$('#fe').value.trim();load(b,1);const{data,error}=await sb.from('barcode_folders').insert({name:$('#fn').value.trim(),...(et?{event_title:et}:{})}).select().single();load(b,0);
+  if(error)return dbErr(error,'تعذر إنشاء المجلد');closeM();toast('تم إنشاء المجلد','ok');location.hash='#/folder/'+data.id}}
+
+/* ---- توليد الصور: QR يحتوي Token فقط (GM1:) ---- */
+function makeQr(text,color,size,bg){return new Promise(res=>{let box=$('#tmpQr');if(!box){box=document.createElement('div');box.id='tmpQr';box.style.cssText='position:absolute;left:-9999px;top:-9999px;opacity:0;pointer-events:none';document.body.appendChild(box)}
+ const d=document.createElement('div');box.appendChild(d);new QRCode(d,{text,width:size,height:size,colorDark:color,colorLight:bg||'rgba(0,0,0,0)',correctLevel:QRCode.CorrectLevel.L});
+ const t=setInterval(()=>{const c=d.querySelector('canvas'),i=d.querySelector('img');let src=null;if(c&&c.width>0)src=c;else if(i&&i.complete&&i.naturalWidth>0)src=i;if(src){clearInterval(t);setTimeout(()=>res({src,done:()=>d.remove()}),20)}},10)})}
+function ticketTexts(t,o){const lbl=t.label||'';let comp=lbl?'':(o.personal?'(الدعوة شخصية)':'');if(t.companions_count>0)comp=compTxt(t.companions_count,t.companions_format);return{name:lbl,comp,num:lbl?'':toAr(t.ticket_number)}}
+function drawTexts(x,o,tx,qx,qy,qs){x.fillStyle=o.color;x.textAlign='center';x.direction='rtl';const cx=qx+qs/2,gap=5;let y=qy-gap;x.textBaseline='bottom';
+ if(tx.comp){x.font=`bold ${o.fc}px ${FONT}`;x.fillText(tx.comp,cx,y);y-=o.fc+gap}
+ if(tx.name){x.font=`bold ${o.fn}px ${FONT}`;x.fillText(tx.name,cx,y)}
+ if(tx.num){x.textBaseline='top';x.font=`bold ${o.fnum}px ${FONT}`;x.fillText(tx.num,cx,qy+qs+gap)}}
+async function makeTicket(t,o){const qs=o.size,tx=ticketTexts(t,o);
+ const q=await makeQr('GM1:'+t.qr_token,o.color,qs,o.img?'rgba(0,0,0,0)':'#ffffff');
+ const c=document.createElement('canvas'),x=c.getContext('2d');let qx,qy;
  if(o.img){c.width=o.img.width;c.height=o.img.height;x.drawImage(o.img,0,0);qx=o.x-qs/2;qy=o.y-qs/2}
- else{c.width=Math.max(qs+80,360);c.height=qs+150;x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);qx=(c.width-qs)/2;qy=75}
- x.drawImage(q,qx,qy,qs,qs);x.fillStyle=o.color;x.textAlign='center';x.direction='rtl';
- const cx=qx+qs/2,F='Tajawal,sans-serif';let y=qy-6;x.textBaseline='bottom';
- const cp=compTxt(t.companions_count,t.companions_format);
- if(cp){x.font='bold 20px '+F;x.fillText(cp,cx,y);y-=26}
- if(t.label){x.font='bold 28px '+F;x.fillText(t.label,cx,y)}else{x.textBaseline='top';x.font='bold 24px '+F;x.fillText(toAr(t.ticket_number),cx,qy+qs+6)}
+ else{x.direction='rtl';const w=(f,s)=>{if(!s)return 0;x.font=`bold ${f}px ${FONT}`;return x.measureText(s).width},gap=5;
+  const tw=Math.max(w(o.fn,tx.name),w(o.fc,tx.comp),w(o.fnum,tx.num)),top=gap+(tx.comp?o.fc+gap:0)+(tx.name?o.fn+gap:0),bot=gap+(tx.num?o.fnum+gap:0);
+  c.width=Math.max(qs+60,tw+80);c.height=qs+top+bot;x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);qx=(c.width-qs)/2;qy=top}
+ x.imageSmoothingEnabled=false;x.drawImage(q.src,qx,qy,qs,qs);q.done();drawTexts(x,o,tx,qx,qy,qs);
  return new Promise(r=>c.toBlob(r,'image/jpeg',.85))}
-async function genTickets(){const folder=$('#gF').value,mode=$('#gM').value;
- if(mode==='merged'&&!G.img)return toast('ارفعي تصميم الدعوة أولًا','no');
- const names=$('#gN').value.split('\n').map(s=>s.trim()).filter(Boolean),n=names.length||+$('#gC').value;
+
+/* ---- نموذج التوليد داخل صفحة المجلد ---- */
+const sld=(id,label,min,max,val,hint)=>fld(label,`<div class="row" style="flex-wrap:nowrap"><input id="${id}" class="rg" type="range" min="${min}" max="${max}" step="1" value="${val}" style="direction:ltr;flex:1"><b id="${id}v" dir="ltr" style="min-width:64px;text-align:center">${val}px</b></div>`,hint);
+const genForm=id=>`<div class="card"><h3>إنشاء باركودات</h3>
+${fld('نوع التوليد','<select id="gM"><option value="merged">دعوة مدموجة بالتصميم</option><option value="qr">باركود مفرغ فقط</option></select>')}
+<div id="gD">${fileField('gFile','تصميم الدعوة (PNG/JPG)','بعد الاختيار اضغطي أو اسحبي على الصورة لتحديد مكان الباركود، وسيظهر خط إرشادي عند المنتصف')}<canvas id="gCv" hidden></canvas></div>
+<div id="gBox" class="qrbox" hidden></div>
+${sld('gS','حجم الباركود',60,800,250,'اسحبي المقبض وشاهدي التغيير مباشرة على الدعوة')}
+${sld('gFn','حجم الاسم',10,120,30)}${sld('gFc','حجم المرافقين',10,120,20)}${sld('gFm','حجم الرقم',10,120,25)}
+${fld('لون الباركود والنصوص','<input id="gCo" type="color" value="#174A8B">')}
+${fld('قائمة الأسماء (اختياري)','<textarea id="gN" placeholder="اسم في كل سطر"></textarea>','عند إدخال أسماء يُحسب العدد منها تلقائيًا ويُلغى الترقيم')}
+<div class="row">${fld('العدد','<input id="gC" type="number" value="5" min="1" max="500">').replace('class="f"','class="f x1"')}${fld('المرافقين','<input id="gP" type="number" value="0" min="0">').replace('class="f"','class="f x1"')}${fld('الصيغة','<select id="gT"><option value="companions">عدد المرافقين / X</option><option value="includes">الدعوة تشمل (X) أشخاص</option></select>').replace('class="f"','class="f x1"')}</div>
+<label class="row" style="margin-bottom:14px"><input id="gPs" type="checkbox" checked> إظهار عبارة (الدعوة شخصية) للتذاكر بدون اسم</label>
+<button id="gGo" class="btn bp bk" onclick="genTickets('${id}')">بدء التوليد والحفظ</button></div>`;
+const gOpts=()=>({size:+$('#gS').value||250,color:$('#gCo').value,fn:+$('#gFn').value||30,fc:+$('#gFc').value||20,fnum:+$('#gFm').value||25,personal:$('#gPs').checked,cp:+$('#gP').value||0,fmt:$('#gT').value,img:G.img,x:G.x,y:G.y});
+function updCount(){const n=$('#gN').value.split('\n').map(x=>x.trim()).filter(Boolean).length,c=$('#gC');if(n){c.value=n;c.disabled=true}else c.disabled=false}
+function pvDraw(){const cv=$('#gCv');if(!G.img){cv.hidden=true;return}const o=gOpts();cv.hidden=false;cv.width=G.img.width;cv.height=G.img.height;const x=cv.getContext('2d');x.drawImage(G.img,0,0);
+ if(G.gx||G.gy){x.save();x.strokeStyle='rgba(23,74,139,.85)';x.lineWidth=Math.max(2,cv.width/400);if(G.gy){x.beginPath();x.moveTo(cv.width/2,0);x.lineTo(cv.width/2,cv.height);x.stroke()}if(G.gx){x.beginPath();x.moveTo(0,cv.height/2);x.lineTo(cv.width,cv.height/2);x.stroke()}x.restore()}
+ if(!G.placed)return;const qs=o.size,qx=G.x-qs/2,qy=G.y-qs/2,m=qs/100;
+ x.save();x.strokeStyle=o.color;x.fillStyle=o.color;x.globalAlpha=.6;x.lineWidth=Math.max(2,cv.width/300);x.setLineDash([12,8]);x.strokeRect(qx,qy,qs,qs);x.setLineDash([]);
+ [[5,5],[65,5],[5,65]].forEach(([a,b])=>{x.lineWidth=5*m;x.strokeRect(qx+(a+2.5)*m,qy+(b+2.5)*m,25*m,25*m);x.fillRect(qx+(a+9)*m,qy+(b+9)*m,16*m,16*m)});
+ [[45,45,10],[45,60,15],[65,45,15],[80,65,15]].forEach(([a,b,z])=>x.fillRect(qx+a*m,qy+b*m,z*m,z*m));x.restore();
+ const nm=$('#gN').value.split('\n').map(v=>v.trim()).filter(Boolean)[0]||'';
+ drawTexts(x,o,ticketTexts({label:nm,companions_count:o.cp,companions_format:o.fmt,ticket_number:1},o),qx,qy,qs)}
+function bindGen(){
+ const redraw=()=>{['gS','gFn','gFc','gFm'].forEach(i=>$('#'+i+'v').textContent=$('#'+i).value+'px');const bx=$('#gBox');bx.style.width=bx.style.height=Math.min(+$('#gS').value,300)+'px';pvDraw()};
+ ['gS','gFn','gFc','gFm','gCo','gP','gT','gPs'].forEach(i=>{$('#'+i).addEventListener('input',redraw);$('#'+i).addEventListener('change',redraw)});
+ $('#gN').addEventListener('input',()=>{updCount();redraw()});
+ $('#gFile').onchange=e=>{const f=e.target.files[0];if(!f)return;const im=new Image();im.onload=()=>{const k=Math.min(1,1080/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);G.img=c;G.x=c.width/2;G.y=c.height/2;G.placed=false;const sl=$('#gS');sl.max=Math.max(60,Math.min(800,Math.min(c.width,c.height)));if(+sl.value>+sl.max)sl.value=sl.max;redraw()};im.src=URL.createObjectURL(f)};
+ const cv=$('#gCv');let drag=false;
+ const mv=e=>{const r=cv.getBoundingClientRect();let X=(e.clientX-r.left)*cv.width/r.width,Y=(e.clientY-r.top)*cv.height/r.height;G.gy=Math.abs(X-cv.width/2)<30;G.gx=Math.abs(Y-cv.height/2)<30;if(G.gy)X=cv.width/2;if(G.gx)Y=cv.height/2;G.x=X;G.y=Y;G.placed=true;pvDraw()};
+ cv.addEventListener('pointerdown',e=>{drag=true;try{cv.setPointerCapture(e.pointerId)}catch(x){}mv(e)});cv.addEventListener('pointermove',e=>{if(drag)mv(e)});
+ ['pointerup','pointercancel'].forEach(n=>cv.addEventListener(n,()=>{drag=false;G.gx=G.gy=false;pvDraw()}));
+ $('#gM').onchange=e=>{const q=e.target.value==='qr';$('#gD').hidden=q;$('#gBox').hidden=!q;redraw()};
+ redraw()}
+async function genTickets(folder){const mode=$('#gM').value;
+ if(mode==='merged'){if(!G.img)return toast('ارفعي تصميم الدعوة أولًا','no');if(!G.placed)return toast('اضغطي على الصورة أو اسحبي لتحديد مكان الباركود أولًا','no')}
+ const names=$('#gN').value.split('\n').map(v=>v.trim()).filter(Boolean),n=names.length||+$('#gC').value;
  if(!(n>=1&&n<=500))return toast('العدد بين 1 و 500','no');
- const cp=+$('#gP').value||0,fmt=$('#gT').value,b=$('#gGo');load(b,1,'جاري التوليد...');
- try{const rows=Array.from({length:n},(_,i)=>({folder_id:folder,label:names[i]||null,companions_count:cp,companions_format:fmt}));
-  const{data,error}=await sb.from('generic_tickets').insert(rows).select();if(error)throw error;
-  const o={img:mode==='merged'?G.img:null,x:G.x,y:G.y,size:+$('#gS').value||250,color:$('#gCo').value};
-  for(let i=0;i<data.length;i+=5)await Promise.all(data.slice(i,i+5).map(async t=>{const bl=await makeTicket(t,o),p=`${folder}/${t.code}.jpg`;
-   const{error:e}=await sb.storage.from('tickets').upload(p,bl,{contentType:'image/jpeg',upsert:true});if(e)throw e;
-   await sb.from('generic_tickets').update({image_path:p}).eq('id',t.id)}));
-  toast(`تم توليد ${n} تذكرة`,'ok');location.hash='#/folder/'+folder}
- catch(e){dbErr(e,'تعذر توليد الباركود، راجع إعدادات قاعدة البيانات.')}finally{load(b,0)}}
+ const o=gOpts();o.img=mode==='merged'?G.img:null;const b=$('#gGo');load(b,1,'جاري التوليد...');let ids=[];
+ try{await document.fonts.load('700 30px Tajawal');
+  const rows=Array.from({length:n},(_,i)=>({folder_id:folder,label:names[i]||null,companions_count:o.cp,companions_format:o.fmt}));
+  const{data,error}=await sb.from('generic_tickets').insert(rows).select();if(error)throw error;ids=data.map(t=>t.id);let done=0;
+  for(let i=0;i<data.length;i+=5){await Promise.all(data.slice(i,i+5).map(async t=>{const bl=await makeTicket(t,o),pth=`${folder}/${t.code}.jpg`;
+    const{error:e}=await sb.storage.from('tickets').upload(pth,bl,{contentType:'image/jpeg',upsert:true});if(e)throw e;
+    const{error:e2}=await sb.from('generic_tickets').update({image_path:pth}).eq('id',t.id);if(e2)throw e2;done++}));
+   b.innerHTML=`<span class="sp"></span> جاري المعالجة (${done}/${n})...`}
+  toast(`تم توليد ${n} تذكرة`,'ok');route()}
+ catch(e){if(ids.length){try{await sb.from('generic_tickets').delete().in('id',ids)}catch(x){}}dbErr(e,'تعذر توليد الباركود، راجع إعدادات قاعدة البيانات.')}finally{load(b,0)}}
+
+/* ---- قائمة التذاكر: بحث، تحديد، مشاركة، حذف جماعي ---- */
+const tkCard=t=>`<div class="tk" style="position:relative"><label class="tsel"><input type="checkbox" ${F.sel.has(t.id)?'checked':''} onchange="selTog('${t.id}',this.checked)"></label>${F.u[t.image_path]?`<img src="${F.u[t.image_path]}" alt="" loading="lazy">`:''}<div><b>${esc(t.label||'#'+t.ticket_number)}</b> <small>#${t.ticket_number}</small></div><small dir="ltr">${esc(t.code)}</small>${t.companions_count>0?`<div><small>${esc(compTxt(t.companions_count,t.companions_format))}</small></div>`:''}<div style="margin:6px 0">${t.qr_status==='used'?'<span class="bg u">مستخدمة</span>':t.qr_status==='disabled'?'<span class="bg no">معطّلة</span>':'<span class="bg ok">جاهزة</span>'}</div>
+<div class="row" style="justify-content:center">${F.u[t.image_path]?`<a class="btn bo bs" href="${F.u[t.image_path]}" target="_blank" rel="noopener noreferrer">فتح</a>`:''}${t.qr_status==='used'&&can('reactivate')?`<button class="btn bo bs" onclick="react('generic','${t.id}')">إعادة تفعيل</button>`:''}${can('delete')?`<button class="btn bd bs" onclick="delTk('${t.id}','${esc(t.image_path||'')}')">حذف</button>`:''}</div></div>`;
+function tkList(){const q=normQ(F.q);return F.ts.filter(t=>!q||normQ(t.label).includes(q)||normQ(t.code).includes(q)||String(t.ticket_number).includes(q))}
+function tkGrid(){const l=tkList();return l.length?`<div class="tg">${l.map(tkCard).join('')}</div>`:`<div class="em">${normQ(F.q)?'لا توجد نتائج مطابقة':'لا توجد تذاكر'}</div>`}
+const tkRe=()=>{$('#tl').innerHTML=tkGrid()};
+function filterTk(){F.q=$('#tq').value;tkRe()}
+function selTog(id,v){v?F.sel.add(id):F.sel.delete(id)}
+function selAll(){const l=tkList(),all=l.length>0&&l.every(t=>F.sel.has(t.id));l.forEach(t=>all?F.sel.delete(t.id):F.sel.add(t.id));$('#sAll').textContent=all?'تحديد الكل':'إلغاء التحديد';tkRe()}
+function selRange(){const a=parseInt($('#sFrom').value,10),b=parseInt($('#sTo').value,10);if(isNaN(a)||isNaN(b)||a>b)return toast('أدخلي نطاق أرقام صحيح (مثال: من 30 إلى 40)','no');F.sel.clear();let n=0;F.ts.forEach(t=>{if(t.ticket_number>=a&&t.ticket_number<=b){F.sel.add(t.id);n++}});toast(n?`تم تحديد ${n} تذكرة`:'لا توجد تذاكر في هذا النطاق',n?'ok':'no');tkRe()}
+async function shareSel(){const l=F.ts.filter(t=>F.sel.has(t.id)&&F.u[t.image_path]);if(!l.length)return toast('حددي التذاكر أولًا','no');const files=[];
+ for(const t of l){try{const r=await fetch(F.u[t.image_path]),bl=await r.blob();files.push(new File([bl],`تذكرة_${t.ticket_number}.jpg`,{type:'image/jpeg'}))}catch(e){console.error(e)}}
+ if(files.length&&navigator.canShare&&navigator.canShare({files})){try{await navigator.share({files,title:'التذاكر'})}catch(e){}}else toast('المشاركة غير مدعومة على هذا الجهاز','no')}
+async function delSel(){const l=F.ts.filter(t=>F.sel.has(t.id));if(!l.length)return toast('حددي التذاكر المراد حذفها','no');if(!confirm(`حذف ${l.length} تذكرة؟`))return;
+ const paths=l.map(t=>t.image_path).filter(Boolean);if(paths.length)await sb.storage.from('tickets').remove(paths);
+ const{error}=await sb.from('generic_tickets').delete().in('id',l.map(t=>t.id));if(error)return dbErr(error,'تعذر حذف التذاكر');toast('تم الحذف','ok');route()}
+async function saveFolder(id){const u={name:$('#fiN').value.trim()};if(!u.name)return toast('اكتبي اسم المجلد','no');if('event_title' in F.f)u.event_title=$('#fiE').value.trim()||null;
+ const{error}=await sb.from('barcode_folders').update(u).eq('id',id);if(error)return dbErr(error,'تعذر حفظ بيانات المجلد، راجع إعدادات قاعدة البيانات.');toast('تم حفظ بيانات المجلد','ok');route()}
 async function vFolder(id){mount(shell(LD,'barcodes'));
- const[{data:f},{data:ts}]=await Promise.all([sb.from('barcode_folders').select('*').eq('id',id).single(),sb.from('generic_tickets').select('*').eq('folder_id',id).order('ticket_number')]);
- const paths=(ts||[]).filter(t=>t.image_path).map(t=>t.image_path),u={};
+ const[{data:f},{data:ts}]=await Promise.all([sb.from('barcode_folders').select('*').eq('id',id).maybeSingle(),sb.from('generic_tickets').select('*').eq('folder_id',id).order('ticket_number')]);
+ if(!f){toast('المجلد غير موجود','no');location.hash='#/barcodes';return}
+ const list=(ts||[]).slice().sort((a,b)=>a.qr_status===b.qr_status?a.ticket_number-b.ticket_number:(a.qr_status==='used'?-1:1));
+ const paths=list.filter(t=>t.image_path).map(t=>t.image_path),u={};
  if(paths.length){const{data}=await sb.storage.from('tickets').createSignedUrls(paths,3600);(data||[]).forEach(x=>u[x.path]=x.signedUrl)}
- mount(shell(`<a class="m" href="#/barcodes">${ic('back',16)} الباركودات</a><h1>${esc(f&&f.name)} <small>(${(ts||[]).length})</small></h1>
-<div class="tg">${(ts||[]).map(t=>`<div class="tk">${u[t.image_path]?`<img src="${u[t.image_path]}" alt="" loading="lazy">`:''}<div><b>${esc(t.label||'#'+t.ticket_number)}</b></div><small dir="ltr">${esc(t.code)}</small><div style="margin:6px 0">${t.qr_status==='used'?'<span class="bg u">مستخدمة</span>':t.qr_status==='disabled'?'<span class="bg no">معطّلة</span>':'<span class="bg ok">جاهزة</span>'}</div>
-<div class="row" style="justify-content:center">${u[t.image_path]?`<a class="btn bo bs" href="${u[t.image_path]}" target="_blank" rel="noopener noreferrer">فتح</a>`:''}${t.qr_status==='used'&&can('reactivate')?`<button class="btn bo bs" onclick="react('generic','${t.id}')">إعادة تفعيل</button>`:''}${can('delete')?`<button class="btn bd bs" onclick="delTk('${t.id}','${esc(t.image_path||'')}')">حذف</button>`:''}</div></div>`).join('')||'<div class="em">لا توجد تذاكر</div>'}</div>`,'barcodes'))}
+ F={f,ts:list,u,q:'',sel:new Set()};G.img=null;G.placed=false;const used=list.filter(t=>t.qr_status==='used').length,ro=!can('barcodes');
+ mount(shell(`<a class="m" href="#/barcodes">${ic('back',16)} المجلدات</a>
+<div class="card"><h3>معلومات المجلد</h3><div class="row">${fld('اسم المجلد (يظهر في لوحة التحكم فقط)',`<input id="fiN" maxlength="150" value="${esc(f.name)}" ${ro?'disabled':''}>`).replace('class="f"','class="f x1"')}${fld('اسم المناسبة (يظهر عند فحص التذكرة)',`<input id="fiE" maxlength="150" value="${esc(f.event_title||'')}" ${ro?'disabled':''}>`).replace('class="f"','class="f x1"')}</div>
+${ro?'':`<button class="btn bo bs" style="margin-bottom:14px" onclick="saveFolder('${id}')">حفظ بيانات المجلد</button>`}<p class="m">أُنشئ في ${fDate((f.created_at||'').slice(0,10))}</p>
+<div class="sg" style="margin:0"><div class="st"><b>${list.length}</b><span>إجمالي الباركودات</span></div><div class="st"><b>${list.length-used}</b><span>جاهزة</span></div><div class="st"><b>${used}</b><span>مستخدمة</span></div></div></div>
+${ro?'':genForm(id)}
+<div class="card"><h3>التذاكر الموجودة</h3><div class="f"><input id="tq" type="search" placeholder="ابحثي بالاسم أو الرمز أو الرقم" oninput="filterTk()" autocomplete="off"></div>
+<div class="row" style="margin-bottom:12px"><span class="m">من</span><input id="sFrom" type="number" min="1" style="width:76px"><span class="m">إلى</span><input id="sTo" type="number" min="1" style="width:76px"><button class="btn bo bs" onclick="selRange()">تحديد</button><button id="sAll" class="btn bo bs" onclick="selAll()">تحديد الكل</button><button class="btn bp bs" onclick="shareSel()">مشاركة</button>${can('delete')?`<button class="btn bd bs" onclick="delSel()">حذف المحدد</button>`:''}</div>
+<div id="tl">${tkGrid()}</div></div>`,'barcodes'));
+ if(!ro)bindGen()}
 async function delTk(id,p){if(!confirm('حذف هذه التذكرة؟'))return;if(p)await sb.storage.from('tickets').remove([p]);const{error}=await sb.from('generic_tickets').delete().eq('id',id);if(error)return dbErr(error,'تعذر الحذف');toast('تم الحذف','ok');route()}
 async function react(kind,id){if(!confirm('إعادة تفعيل الباركود؟'))return;const{error}=await sb.rpc('reactivate_ticket',{p_kind:kind,p_id:id});if(error)return dbErr(error,'تعذرت إعادة التفعيل');toast('تمت إعادة التفعيل','ok');route()}
 
 /* ===== قسم الدعوات: المناسبات ===== */
 async function vInvites(){mount(shell(LD,'invites'));const{data}=await sb.from('events').select('*').order('created_at',{ascending:false});
  mount(shell(`<div class="row bt"><h1>إدارة الدعوات</h1>${can('events')?`<button class="btn bp" onclick="evModal()">${ic('plus',17)} مناسبة جديدة</button>`:''}</div>
-<div class="g2">${(data||[]).map(e=>`<a class="card big" href="#/event/${e.id}" style="padding:0;overflow:hidden">${e.image_url?`<img src="${esc(e.image_url)}" alt="" style="height:150px;object-fit:cover;width:100%">`:`<div style="height:90px;background:linear-gradient(135deg,var(--p),var(--pd))"></div>`}<div style="padding:14px 16px"><h3>${esc(e.name)}</h3><small>${fDate(e.event_date)} — ${fTime(e.event_time)}</small><br><small>${ic('pin',14)} ${esc(locName(e))}</small></div></a>`).join('')||'<div class="em">لا توجد مناسبات بعد</div>'}</div>`,'invites'))}
+<div class="g2">${(data||[]).map(e=>`<a class="card big" href="#/event/${e.id}" style="padding:0;overflow:hidden">${e.image_url?`<img src="${esc(e.image_url)}" alt="" style="height:180px;object-fit:contain;width:100%;background:var(--pl)">`:`<div style="height:90px;background:linear-gradient(135deg,var(--p),var(--pd))"></div>`}<div style="padding:14px 16px"><h3>${esc(e.name)}</h3><small>${fDate(e.event_date)} — ${fTime(e.event_time)}</small><br><small>${ic('pin',14)} ${esc(locName(e))}</small></div></a>`).join('')||'<div class="em">لا توجد مناسبات بعد</div>'}</div>`,'invites'))}
 function evModal(){modal(`<h2>مناسبة جديدة</h2><form id="ef">${fld('اسم المناسبة','<input id="en" required maxlength="150">')}${fileField('ei','صورة الدعوة')}
-<div class="row">${fld('التاريخ','<input id="ed" type="date" required>').replace('class="f"','class="f x1"')}${fld('الوقت','<input id="et" type="time" required>').replace('class="f"','class="f x1"')}</div>
+<div class="row">${fld('التاريخ','<input id="ed" type="date" required>').replace('class="f"','class="f x1"')}${fld('الاستقبال','<input id="et" type="time" required>').replace('class="f"','class="f x1"')}</div>
 ${fld(`${ic('pin',16)} اسم الموقع`,'<input id="el" required maxlength="250" placeholder="قاعة الملكة">')}${fld(`${ic('map',16)} رابط خرائط Google (اختياري)`,'<input id="eu" type="url" dir="ltr" maxlength="500" placeholder="https://maps.app.goo.gl/...">','يظهر للضيف زر فتح الموقع في الخرائط')}${fld('وصف اختياري','<textarea id="edc"></textarea>')}
 ${fld('ظهور الباركود للضيف','<select id="eb" onchange="syncLM()"><option value="after_confirmation">بعد تأكيد الحضور</option><option value="always">دائمًا</option><option value="hidden">مخفي (للإحصاء فقط)</option></select>')}
 <div id="emw" hidden>${fld('نمط الروابط','<select id="em"><option value="personal">رابط شخصي لكل ضيف</option><option value="shared">رابط موحد للقائمة</option></select>')}</div><p id="emn" class="h" style="margin:-6px 0 14px">عند تفعيل الباركود يتم استخدام روابط فردية تلقائياً لكل ضيف.</p>
@@ -262,7 +347,7 @@ const normQ=s=>String(s==null?'':s).replace(/[٠-٩]/g,d=>'٠١٢٣٤٥٦٧٨٩'
 function guestRow(g){const k=phoneCheck(g.phone),iv=E.iv.find(i=>i.id===g.inviter_id);
   return`<div class="r ${k.ok?'':'bad'}"><div class="i"><b>${esc(g.name||'بدون اسم')} <small>#${g.ticket_number}</small></b><small dir="ltr">${esc(g.phone)}</small>${k.ok?'':`<small class="er">${k.why}</small>`}<small>${iv?esc(iv.name):'بدون داعية'}${g.companions_count?' — '+compTxt(g.companions_count):''}</small></div>
 <div class="a">${badge(g.status)}${g.qr_status==='used'?'<span class="bg u">حضر</span>':''}<button class="btn bo bs" onclick="copy('${link('t',g.invite_token)}')">نسخ الرابط</button>
-${g.status==='declined'&&can('guests')?`<button class="btn bo bs" onclick="repModal('${g.id}')">استبدال</button>`:''}${g.qr_status==='used'&&can('reactivate')?`<button class="btn bo bs" onclick="react('guest','${g.id}')">إعادة تفعيل</button>`:''}${can('delete')?`<button class="btn bd bs" onclick="delGuest('${g.id}')">حذف</button>`:''}</div></div>`}
+${can('guests')?`<button class="btn bo bs" onclick="editGuest('${g.id}')">تعديل</button>`:''}${g.status==='declined'&&can('guests')?`<button class="btn bo bs" onclick="repModal('${g.id}')">استبدال</button>`:''}${g.qr_status==='used'&&can('reactivate')?`<button class="btn bo bs" onclick="react('guest','${g.id}')">إعادة تفعيل</button>`:''}${can('delete')?`<button class="btn bd bs" onclick="delGuest('${g.id}')">حذف</button>`:''}</div></div>`}
 function guestRows(){const f=E.filter||'',q=normQ(E.q);
  const list=E.gs.filter(g=>(!f||(f==='none'?!g.inviter_id:g.inviter_id===f))&&(!q||normQ(g.name).includes(q)||normQ(g.phone).includes(q)));
  return list.map(guestRow).join('')||`<div class="em">${q?'لا توجد نتائج مطابقة':'لا يوجد ضيوف'}</div>`}
@@ -286,7 +371,13 @@ function addModal(){modal(`<h2>إضافة ضيوف</h2>${fld('الداعية',`<
  $('#af').onsubmit=async e=>{e.preventDefault();const p=parseGuests($('#ag').value),b=$('#ab');load(b,1,'جاري الإضافة...');
   const{error}=await sb.from('guests').insert(p.map(x=>({event_id:E.ev.id,inviter_id:$('#ai').value||null,name:x.name,phone:x.phone,companions_count:x.n})));
   load(b,0);if(error)return dbErr(error,'تعذرت إضافة الضيوف، راجع إعدادات قاعدة البيانات.');closeM();toast(`تمت إضافة ${p.length} ضيف`,'ok');route()}}
-function repModal(id){modal(`<h2>استبدال ضيف معتذر</h2><p class="m">سيُلغى رابط وباركود الضيف السابق ويُنشأ جديدان للبديل.</p><form id="rf">${fld('اسم الضيف الجديد','<input id="rn" required>')}${fld('الجوال','<input id="rp" required dir="ltr">')}${fld('المرافقين','<input id="rc" type="number" min="0" value="0">')}
+function editGuest(id){const g=E.gs.find(x=>x.id===id);if(!g)return;
+ modal(`<h2>تعديل بيانات الضيف</h2><form id="ef2">${fld('اسم الضيف',`<input id="en2" required maxlength="120" value="${esc(g.name||'')}">`)}${fld('رقم الجوال',`<input id="ep2" required dir="ltr" inputmode="tel" maxlength="10" value="${esc(g.phone||'')}">`)}${fld('عدد المرافقين',`<input id="ec2" type="number" min="0" max="50" value="${g.companions_count}">`)}${fld('الداعية',`<select id="ei2"><option value="">بدون داعية</option>${E.iv.filter(i=>i.is_active||i.id===g.inviter_id).map(i=>`<option value="${i.id}" ${i.id===g.inviter_id?'selected':''}>${esc(i.name)}</option>`).join('')}</select>`,'نقل الضيف إلى داعية أخرى يحدّث الإحصائيات تلقائيًا')}
+<div class="row"><button type="button" class="btn bo x1" onclick="closeM()">إلغاء</button><button id="eb2" class="btn bp x1">حفظ التعديلات</button></div></form>`);
+ $('#ef2').onsubmit=async e=>{e.preventDefault();const nm=$('#en2').value.trim(),ph=$('#ep2').value.trim(),k=phoneCheck(ph);if(!nm)return toast('اكتبي اسم الضيف','no');if(!k.ok)return toast('رقم الجوال غير صالح: '+k.why,'no');
+  const b=$('#eb2');load(b,1,'جاري الحفظ...');const{error}=await sb.from('guests').update({name:nm,phone:ph,companions_count:Math.max(0,parseInt($('#ec2').value,10)||0),inviter_id:$('#ei2').value||null}).eq('id',id);
+  load(b,0);if(error)return dbErr(error,'تعذر حفظ التعديلات، راجع إعدادات قاعدة البيانات.');closeM();toast('تم حفظ التعديلات','ok');route()}}
+function repModal(id){modal(`<h2>استبدال ضيف معتذر</h2><p class="m">سيُلغى رابط الدعوة وباركود الضيف السابق نهائيًا، ويُنشأ للبديل رابط ودعوة وباركود جديدة بالكامل.</p><form id="rf">${fld('اسم الضيف الجديد','<input id="rn" required>')}${fld('الجوال','<input id="rp" required dir="ltr">')}${fld('المرافقين','<input id="rc" type="number" min="0" value="0">')}
 <div class="row"><button type="button" class="btn bo x1" onclick="closeM()">إلغاء</button><button id="rb" class="btn bp x1">استبدال</button></div></form>`);
  $('#rf').onsubmit=async e=>{e.preventDefault();const b=$('#rb');load(b,1);const{error}=await sb.rpc('replace_guest',{p_old:id,p_name:$('#rn').value.trim(),p_phone:$('#rp').value.trim(),p_companions:+$('#rc').value||0});
   load(b,0);if(error)return dbErr(error,'تعذر الاستبدال');closeM();toast('تم الاستبدال وسُجّل في سجل التدقيق','ok');route()}}
@@ -307,30 +398,39 @@ async function delIv(id){if(!confirm('حذف الداعية؟ سيبقى ضيو�
 async function mkLk(id){const{error}=await sb.from('invitation_links').insert({event_id:E.ev.id,inviter_id:id});if(error)return dbErr(error,'تعذر الإنشاء');route()}
 async function toggleLk(id){const{error}=await sb.from('invitation_links').update({is_active:false,revoked_at:new Date().toISOString()}).eq('id',id);if(error)return dbErr(error,'تعذر التعطيل');route()}
 
-const defMsg=ev=>(ev&&ev.invite_message)||('السلام عليكم\nيسرنا دعوتكم لحضور '+(ev?ev.name:''));
+const WA_DEF='دعوات GM Design\n\nدعوة لحضور مناسبة خاصة\n\nاضغط لعرض تفاصيل الدعوة والرد عليها';
+const defMsg=ev=>(ev&&ev.invite_message)||WA_DEF;
 async function saveMsg(){const v=$('#sm').value.trim();const{error}=await sb.from('events').update({invite_message:v||null}).eq('id',E.ev.id);if(error)return dbErr(error,'تعذر حفظ نص الرسالة، راجع إعدادات قاعدة البيانات.');E.ev.invite_message=v||null;toast('تم حفظ نص الرسالة','ok')}
 function tSend(){return`<div class="card">${fld('نص الدعوة الافتراضي (يُضاف اسم الضيف ورابط الدعوة تلقائيًا)',`<textarea id="sm" maxlength="1000">${esc(defMsg(E.ev))}</textarea>`,'يُحفظ مرة واحدة لهذه المناسبة ويُستخدم في واتساب وروابط الداعيات')}${can('events')?`<button class="btn bp bs" onclick="saveMsg()">حفظ نص الرسالة</button>`:''}</div>
 ${E.gs.map(g=>`<div class="r"><div class="i"><b>${esc(g.name||'بدون اسم')}</b><small dir="ltr">${esc(g.phone)}</small></div><div class="a"><span class="bg ${g.invited_at?'ok':''}">${g.invited_at?'تم الإرسال':'لم يُرسل'}</span><button class="btn bp bs" onclick="sendWa('${g.id}')">واتساب</button></div></div>`).join('')||'<div class="em">أضيفي ضيوفًا أولًا</div>'}`}
-async function sendWa(id){const g=E.gs.find(x=>x.id===id),m=`${g.name?'المكرمة:\n'+g.name+'\n\n':''}${$('#sm').value.trim()}\n\nرابط الدعوة:\n${link('t',g.invite_token)}`;
+async function sendWa(id){const g=E.gs.find(x=>x.id===id),m=`${$('#sm').value.trim()||WA_DEF}\n\n${link('t',g.invite_token)}`;
  window.open(waLink(g.phone,m),'_blank','noopener');await sb.from('guests').update({invited_at:new Date().toISOString()}).eq('id',id);g.invited_at=new Date().toISOString();const t=$('#sm').value;mount(shell(`<h1>${esc(E.ev.name)}</h1><div class="tabs"><a href="#/event/${E.ev.id}/overview">نظرة عامة</a><a href="#/event/${E.ev.id}/guests">الضيوف</a><a href="#/event/${E.ev.id}/inviters">الداعيات</a><a class="on">الإرسال</a></div>${tSend()}`,'invites'));$('#sm').value=t}
 
 /* ===== الصفحات العامة: الدعوة / الرابط الموحد / بوابة الداعية / إحصائيات المالك ===== */
 const fDay=d=>d?new Date(d+'T00:00:00').toLocaleDateString('ar-SA-u-ca-gregory',{weekday:'long'}):'';
-const dcard=(i,l,v,sub,wide)=>`<div class="dc${wide?' wide':''}"><div class="dci">${ic(i,22)}</div><div class="dct"><small>${l}</small><b>${v}</b>${sub?`<span>${sub}</span>`:''}</div></div>`;
-function accentFromImg(url){try{const im=new Image();im.crossOrigin='anonymous';im.onload=()=>{try{const c=document.createElement('canvas');c.width=c.height=16;const x=c.getContext('2d');x.drawImage(im,0,0,16,16);const a=x.getImageData(0,0,16,16).data;let r=0,g=0,b=0,n=0;for(let i=0;i<a.length;i+=4){if(a[i+3]<200)continue;r+=a[i];g+=a[i+1];b+=a[i+2];n++}if(!n)return;r/=n;g/=n;b/=n;const mx=Math.max(r,g,b),mn=Math.min(r,g,b);if(!mx||(mx-mn)/mx<.18)return;const l=(.299*r+.587*g+.114*b)/255,f=l>.38?.38/l:1;r=Math.round(r*f);g=Math.round(g*f);b=Math.round(b*f);const el=$('.iv');if(!el)return;el.style.setProperty('--ac',`rgb(${r},${g},${b})`);el.style.setProperty('--acl',`rgba(${r},${g},${b},.12)`)}catch(e){}};im.src=url}catch(e){}}
+const DIAM='<svg width="12" height="12" viewBox="0 0 14 14"><path d="M7 0l7 7-7 7-7-7z" fill="currentColor"/></svg>';
+const dcard=(i,l,v,sub,wide)=>`<div class="dc${wide?' wide':''}"><div class="dci">${ic(i,22)}</div><small>${l}</small><b>${v}</b>${sub?`<span>${sub}</span>`:''}</div>`;
+function accentFromImg(url){try{const im=new Image();im.crossOrigin='anonymous';im.onload=()=>{try{const c=document.createElement('canvas');c.width=c.height=16;const x=c.getContext('2d');x.drawImage(im,0,0,16,16);const a=x.getImageData(0,0,16,16).data;let r=0,g=0,b=0,n=0;for(let i=0;i<a.length;i+=4){if(a[i+3]<200)continue;r+=a[i];g+=a[i+1];b+=a[i+2];n++}if(!n)return;r/=n;g/=n;b/=n;const mx=Math.max(r,g,b),mn=Math.min(r,g,b);if(!mx||(mx-mn)/mx<.18)return;const l=(.299*r+.587*g+.114*b)/255,f=l>.38?.38/l:1;r=Math.round(r*f);g=Math.round(g*f);b=Math.round(b*f);const el=$('.ivp');if(!el)return;el.style.setProperty('--ac',`rgb(${r},${g},${b})`);el.style.setProperty('--acl',`rgba(${r},${g},${b},.12)`)}catch(e){}};im.src=url}catch(e){}}
+const irow=(i,v)=>`<div class="ir"><span class="iri">${ic(i,18)}</span><span>${v}</span></div>`;
 async function vInvite(t){pub(LD);const{data:d,error}=await sb.rpc('get_guest_invite',{p_invite_token:t});
  if(error||!d)return pub('<div class="em"><h2>الدعوة غير موجودة</h2><p>تحقق من الرابط أو تواصل مع منظّم المناسبة</p></div>');
- const nm=(d.guest_name||'').trim(),img=safeUrl(d.image_url);let act='',qr='';
- if(d.status==='pending')act=`<div class="c2"><h3 style="margin-bottom:12px">هل تتشرفون بالحضور؟</h3><div class="stk"><button class="ivb" onclick="rsvp('${esc(t)}','confirmed')">${ic('check',18)} أؤكد حضوري</button><button class="ivb ghost" onclick="rsvp('${esc(t)}','declined')">أعتذر عن الحضور</button></div></div>`;
+ const nm=(d.guest_name||'').trim(),img=safeUrl(d.image_url);let act='',desc='';
+ if(d.status==='pending')act=`<div class="rsvp"><button class="ivb" onclick="rsvp('${esc(t)}','confirmed')">${ic('check',18)} أؤكد حضوري</button><button class="ivb ghost" onclick="rsvp('${esc(t)}','declined')">أعتذر عن الحضور</button></div>`;
  else if(d.status==='confirmed')act=`<div class="note ok">${ic('check',18)} تم تأكيد حضوركم، يسعدنا لقاؤكم</div>`;
  else if(d.status==='declined')act='<div class="note no">تم تسجيل اعتذاركم. نتمنى لكم مناسبة سعيدة</div>';
- if(d.qr_token)qr=`<div class="c2"><b style="font-size:17px">${nm?esc(nm):'رقم الدعوة '+toAr(d.ticket_number)}</b>${d.companions_count>0?`<div class="m">${esc(compTxt(d.companions_count))}</div>`:''}<div class="qbox"><div id="qq"></div></div><div class="m" style="font-size:13.5px">أبرزوا هذا الباركود عند الدخول</div>${d.qr_status==='used'?'<div class="note no" style="margin-top:12px">تم تسجيل حضور هذه الدعوة</div>':''}</div>`;
- mount(`<div class="iv"><div class="hero${img?'':' blank'}">${img?`<img src="${esc(img)}" alt="">`:''}</div>
-<div class="tcard"><span class="pill">دعوة خاصة</span><h1>${esc(d.event_name)}</h1><p class="greet">${nm?`مرحبًا بكم<b>${esc(nm)}</b>`:'مرحبًا بضيفنا الكريم'}</p></div>
-<div class="dgrid">${dcard('cal','التاريخ',fDate(d.event_date),fDay(d.event_date))}${dcard('clock','الوقت',fTime(d.event_time))}${dcard('pin','الموقع',esc(locName(d)),'',1)}${d.companions_count>0?dcard('users','المرافقون',toAr(d.companions_count)+(d.companions_count===1?' مرافق':' مرافقين'),'',1):''}</div>
-${mapBtn(d.location_url)}${d.description?`<div class="c2" style="text-align:right"><p class="m" style="margin:0;white-space:pre-line">${esc(d.description)}</p></div>`:''}${act}${qr}</div>`);
- if(img)accentFromImg(img);
- if(d.qr_token)drawQr('qq',link('scan',d.qr_token),d.barcode_color,210)}
+ if(d.description)desc=`<div class="c2" style="text-align:right"><p class="m" style="margin:0;white-space:pre-line">${esc(d.description)}</p></div>`;
+ const frame=img?`<div class="frame" style="margin-top:16px"><img src="${esc(img)}" alt="${esc(d.event_name)}"></div>`:'';
+ if(d.qr_token){
+  const comp=d.companions_count>0?`<div class="m">${esc(compTxt(d.companions_count))}</div>`:'';
+  mount(`<div class="ivp"><div class="iv"><div class="tk2 big"><small class="m">تذكرة الدخول</small><div class="tkh">حياكم الله</div><div class="tkn">${nm?esc(nm):'رقم الدعوة '+toAr(d.ticket_number)}</div>${comp}<div class="sep"></div><div class="qbox lg"><div id="qq"></div></div>${d.qr_status==='used'?'<div class="note no" style="margin-top:12px">تم تسجيل حضور هذه الدعوة</div>':''}</div>
+<p class="keep">الرجاء الاحتفاظ بالباركود وإبرازه عند دخول القاعة.</p>${act}
+<div class="info"><h2>${esc(d.event_name)}</h2><div class="irow">${irow('cal',fDate(d.event_date)+' · '+fDay(d.event_date))}${irow('clock','الاستقبال: '+fTime(d.event_time))}${irow('pin',esc(locName(d)))}</div>${mapBtn(d.location_url)}</div>${desc}${frame}</div></div>`);
+  drawQr('qq','GM1:'+d.qr_token,d.barcode_color,260);if(img)accentFromImg(img);return}
+ mount(`<div class="ivp${img?'':' noimg'}"><div class="iv">${img?`<div class="frame"><img src="${esc(img)}" alt="${esc(d.event_name)}"></div>`:'<div class="hero blank"></div>'}
+<div class="tcard"><span class="pill">دعوة خاصة</span><h1>${esc(d.event_name)}</h1><div class="orn"><i></i>${DIAM}<i></i></div><p class="greet">${nm?`حياكم الله<b>${esc(nm)}</b>`:'حياكم الله'}</p></div>
+<div class="dgrid">${dcard('cal','التاريخ',fDate(d.event_date),fDay(d.event_date))}${dcard('clock','الاستقبال',fTime(d.event_time))}${dcard('pin','الموقع',esc(locName(d)),'',1)}${d.companions_count>0?dcard('users','المرافقون',toAr(d.companions_count)+(d.companions_count===1?' مرافق':' مرافقين'),'',1):''}</div>
+${mapBtn(d.location_url)}${desc}${act}</div></div>`);
+ if(img)accentFromImg(img)}
 async function rsvp(t,s){const{error}=await sb.rpc('respond_to_invite',{p_invite_token:t,p_status:s});if(error)return dbErr(error,'تعذر تسجيل ردكم');vInvite(t)}
 async function vShared(tok){pub(LD);const{data:d}=await sb.rpc('get_shared_link_info',{p_token:tok});
  if(!d)return pub('<div class="em"><h2>الرابط غير صالح</h2></div>');
@@ -339,7 +439,7 @@ async function vShared(tok){pub(LD);const{data:d}=await sb.rpc('get_shared_link_
   if(error)return dbErr(error,'تعذر التسجيل');location.href=link('t',t)}}
 async function vInviter(tok){pub(LD);const{data:d}=await sb.rpc('inviter_get_portal',{p_access_token:tok});
  if(!d)return pub('<div class="em"><h2>الرابط غير صالح أو معطّل</h2></div>');
- const gs=d.guests||[],msgOf=g=>`${g.name?'المكرمة:\n'+g.name+'\n\n':''}${d.invite_message||('السلام عليكم\nيسرنا دعوتكم لحضور '+d.event_name)}\n\nرابط الدعوة:\n${link('t',g.invite_token)}`;
+ const gs=d.guests||[],msgOf=g=>`${d.invite_message||WA_DEF}\n\n${link('t',g.invite_token)}`;
  window._ptok=tok;window._pg=gs;window._pm=msgOf;
  pub(`<div style="padding:22px 0"><p class="m">${esc(d.event_name)} — ${fDate(d.event_date)}</p><h1>${esc(d.inviter_name)}</h1><div class="sg">${statCards(rpcStats(d.stats))}</div>
 ${d.link_mode==='shared'&&d.shared_token?`<button class="btn bo" onclick="copy('${link('list',d.shared_token)}')" style="margin-bottom:14px">نسخ الرابط الموحد للقائمة</button>`:''}
@@ -352,15 +452,24 @@ async function vOwner(tok){pub(LD);const{data:d}=await sb.rpc('get_owner_stats',
  pub(`<div style="padding:22px 0"><h1>${esc(d.event_name)}</h1><p class="m">إحصائيات (قراءة فقط)</p><div class="sg">${statCards(rpcStats(d.stats))}</div>${(d.guests||[]).map(g=>`<div class="r"><b>${esc(g.name||'بدون اسم')}</b>${badge(g.status)}</div>`).join('')||'<div class="em">لا يوجد ضيوف</div>'}</div>`)}
 
 /* ===== الماسح (للموظفين فقط، التسجيل ذري داخل RPC) ===== */
-const extractTok=t=>{try{return new URL(t).searchParams.get('scan')||t}catch(e){return t}};
-function showScan(d,el){const m={success:['ok','تذكرة صالحة وتم تسجيل الدخول'],already_used:['no','تذكرة مستخدمة مسبقًا'],disabled:['no','الباركود معطّل أو الضيف معتذر/مُستبدل'],not_confirmed:['u','الضيف لم يؤكد حضوره'],not_found:['u','رمز غير معروف']}[d.result]||['u',d.result];
- el.innerHTML=`<div class="sr ${m[0]}"><div style="font-size:19px">${m[1]}</div>${d.name?`<div>${esc(d.name)}</div>`:''}${d.list_name?`<div>${esc(d.list_name)}</div>`:''}${d.companions?`<div>${esc(compTxt(d.companions))}</div>`:''}${d.event_name?`<div class="m">${esc(d.event_name)}</div>`:''}${d.result==='already_used'?`<div>أول مسح: ${fStamp(d.first_scan_at)}</div>`:''}</div>`}
-async function vScanner(tok){
- pub(`<div style="padding:18px 0;max-width:460px;margin:0 auto"><div class="row" style="justify-content:center;margin-bottom:12px">${logo()}<h2 style="margin:0">ماسح التذاكر</h2></div><div class="card"><div id="rd" style="max-width:360px;margin:auto"></div><div class="row" style="justify-content:center;margin-top:10px"><button id="rs" class="btn bo bs" hidden>${ic('scan',16)} مسح تذكرة أخرى</button></div><div id="sr"></div></div>${S.me?'<p class="center"><a class="m" href="#/home">العودة للوحة التحكم</a></p>':''}</div>`);
- const out=$('#sr');let busy=false;
- const run=async t=>{out.innerHTML=LD;const{data,error}=await sb.rpc('checkin_ticket',{p_qr_token:t});if(error){console.error(error);out.innerHTML='<div class="sr no">تعذر فحص التذكرة، حاولي مرة أخرى</div>'}else showScan(data,out)};
- const startCam=async()=>{try{S.cam=new Html5Qrcode('rd');await S.cam.start({facingMode:'environment'},{fps:10,qrbox:240},async txt=>{if(busy)return;busy=true;await run(extractTok(txt));setTimeout(()=>busy=false,2500)},()=>{});$('#rs').hidden=true}catch(e){console.error(e);toast('تعذر تشغيل الكاميرا، اسمحي بالوصول إلى الكاميرا','no')}};
- if(tok){await run(tok);const b=$('#rs');b.hidden=false;b.onclick=()=>{out.innerHTML='';startCam()}}else startCam()}
+const HEX64=/^[0-9a-f]{64}$/i;
+const extractTok=t=>{t=String(t||'').trim();if(t.startsWith('GM1:')){const k=t.slice(4);return HEX64.test(k)?k:null}
+ try{const k=new URL(t).searchParams.get('scan');return k&&HEX64.test(k)?k:null}catch(e){return null}}; /* الروابط القديمة تُقرأ داخل الماسح فقط */
+const scanCard=d=>{const nm=d.name?esc(d.name):'ضيفنا الكريم',cp=d.companions>0?`<span class="chip">${ic('users',16)} ${esc(compTxt(d.companions))}</span>`:'',ev=d.event_name?`<div class="rev">${esc(d.event_name)}</div>`:'';
+ if(d.result==='success')return`<div class="rc ok"><div class="ric">${ic('check',40)}</div><div class="rt">حياك الله</div><div class="rn">${nm}</div>${cp}<div class="rm">${ic('clock',16)} وقت تسجيل الدخول: ${fStamp(d.first_scan_at)}</div><div class="rs">تم تسجيل الدخول بنجاح</div>${ev}</div>`;
+ if(d.result==='already_used')return`<div class="rc warn"><div class="ric">${ic('alert',40)}</div><div class="rt">تم استخدام هذه التذكرة مسبقًا.</div><div class="rn">${nm}</div>${cp}<div class="rm">${ic('clock',16)} وقت أول مسح: ${fStamp(d.first_scan_at)}</div>${ev}</div>`;
+ const msg=d.result==='disabled'?'هذه التذكرة ملغاة (ضيف معتذر أو مستبدل أو معطّلة)':'تذكرة غير صالحة أو غير موجودة في النظام';
+ return`<div class="rc bad"><div class="ric">${ic('x',40)}</div><div class="rt">${msg}</div></div>`};
+async function vScanner(){
+ pub(`<div style="padding:18px 0;max-width:460px;margin:0 auto"><div class="row" style="justify-content:center;margin-bottom:12px">${logo()}<h2 style="margin:0">ماسح التذاكر</h2></div><div id="cam" class="card"><div id="rd" style="max-width:360px;margin:auto"></div><p class="m center" style="margin:10px 0 0">وجّهي الكاميرا نحو الباركود</p></div><div id="res"></div>${S.me?'<p class="center"><a class="m" href="#/home">العودة للوحة التحكم</a></p>':''}</div>`);
+ const res=$('#res'),cam=$('#cam');let busy=false;
+ const stop=async()=>{if(S.cam){try{await S.cam.stop();S.cam.clear()}catch(e){}S.cam=null}};
+ const onScan=async txt=>{if(busy)return;busy=true;await stop();cam.hidden=true;const k=extractTok(txt);
+  if(!k)res.innerHTML=scanCard({result:'not_found'});
+  else{res.innerHTML=LD;const{data,error}=await sb.rpc('checkin_ticket',{p_qr_token:k});if(error){console.error(error);res.innerHTML=`<div class="rc bad"><div class="ric">${ic('x',40)}</div><div class="rt">تعذر فحص التذكرة، حاولي مرة أخرى</div></div>`}else res.innerHTML=scanCard(data)}
+  res.insertAdjacentHTML('beforeend','<button class="btn bp bk" style="margin-top:14px" id="again">مسح تذكرة أخرى</button>');$('#again').onclick=start};
+ const start=async()=>{res.innerHTML='';cam.hidden=false;busy=false;try{S.cam=new Html5Qrcode('rd');await S.cam.start({facingMode:'environment'},{fps:10,qrbox:240},onScan,()=>{})}catch(e){console.error(e);toast('تعذر تشغيل الكاميرا، اسمحي بالوصول إلى الكاميرا','no')}};
+ start()}
 /* ===== الإعدادات وإدارة الموظفين ===== */
 async function vSettings(){mount(shell(LD,'settings'));let staff='';
  if(S.me.role==='super_admin'){const[{data:ps},{data:pm}]=await Promise.all([sb.from('profiles').select('*').order('created_at'),sb.from('admin_permissions').select('*')]);
@@ -376,8 +485,7 @@ async function setActive(id,v){const{error}=await sb.from('profiles').update({is
 /* ===== الموجّه ===== */
 async function route(){if(S.cam){try{await S.cam.stop()}catch(e){}S.cam=null}
  const q=new URLSearchParams(location.search),p=location.hash.replace(/^#\/?/,'').split('/').filter(Boolean);
- /* الماسح العام: يُفحص أولاً قبل أي شرط تسجيل دخول */
- if(q.get('scan'))return vScanner(q.get('scan'));
+ /* الماسح العام فقط (بدون تسجيل دخول). لا يوجد مسار فحص عبر الرابط: QR يحمل Token فقط */
  if(p[0]==='scanner-public'||q.has('scanner'))return vScanner();
  if(q.get('t'))return vInvite(q.get('t'));if(q.get('list'))return vShared(q.get('list'));
  if(q.get('token'))return vInviter(q.get('token'));if(q.get('owner'))return vOwner(q.get('owner'));
